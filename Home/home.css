@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    background-color:#eee;
+}
+.container {
+    margin: 20px auto;
+    width: 800px;
+    height: 800px;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: 400px 400px;
+    /*grid-row: auto;*/
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    font-family: sans-serif;
+}
