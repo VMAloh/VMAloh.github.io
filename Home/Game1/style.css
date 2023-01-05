@@ -1,0 +1,45 @@
+#div11, #div12, #div13, #div14, #div15,#div16{ 
+    float:left; width:210px; height:152px; margin:10px;padding:10px; border:2px solid #996bc8; 
+}
+#div21, #div22, #div23, #div24, #div25,#div26 { 
+    float:left; width:210px; height:152px; margin:10px;padding:10px; border:2px solid #51108e; 
+}
+img {
+    width:100%;
+    height:100%;
+}
+
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 50%;
+    left: 7%
+}
+
+.vertical {
+    border-left: 4px solid black;
+    height: 100%;
+    position:absolute;
+    left: 50%;
+    top:0%;
+    z-index: 2;
+}
+
+.buttonDiv{
+    padding-top: 15px;
+    text-align: center;
+    z-index: 3000;
+}
+
+.buttonCheck{
+    background-color: green;
+    width:150px;
+    height:85px;
+    border-color: darkgreen;
+    border-radius: 3px;
+    left:45%;
+    position: absolute;
+    z-index: 3;
+}
