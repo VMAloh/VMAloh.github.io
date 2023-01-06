@@ -8,21 +8,21 @@
 .plus {
     position: relative;
     top: 120px;
-    left: -140px;
+    left: -80px;
 }
 .zebra {
     position: relative;
     top: 70px;
-    left: -140px;
+    left: -60px;
 }
 .egal{
   position: relative;
   top: 120px;
-  left: -120px;
+  right: 30px;
 }
 .intrebare{
   position: relative;
-  left: -70px;
+  left: 10px;
   top: 50px;
 }
 .adunare{
@@ -51,14 +51,14 @@
   width: 150px;
   height: 150px;
   border: none;
-  background: url("4.png") no-repeat;
+  background: url("7.png") no-repeat;
   background-size: 100% 100%;
 }
 .button6 {
   width: 150px;
   height: 150px;
   border: none;
-  background: url("2.png") no-repeat;
+  background: url("6.png") no-repeat;
   background-size: 100% 100%;
 }
 .v {
@@ -71,41 +71,24 @@
     bottom: 0;
     right: 50;
 }
-.pandas1{
-  position: relative; 
-  top: 70px;
-  left: 20px;
-}
-.pandas2{
-  position: relative; 
-  top: 70px;
-  left: -50px;
-}
-.pandas3{
-  position: relative; 
-  top: 70px;
-  left: -120px;
-}
 </style>
 </head>
 <body style="background-color:#FFFFE0">
   <div class="adunare">
-  <img src="panda.png" width="250" height="250" class="pandas1">
-  <img src="panda.png" width="250" height="250" class="pandas2">
-  <img src="panda.png" width="250" height="250" class="pandas3">
-  <img src="minus.png" width="130" height="150" class="plus">
-  <img src="panda.png" width="250" height="250" class="zebra">
+  <img src="6maimute.png" width="600" height="400" class="zebre">
+  <img src="plus.png" width="150" height="150" class="plus">
+  <img src="maimuta.png" width="250" height="250" class="zebra">
   <img src="egal.png" width="150" height="150" class="egal">
   <img src="question.png" width="150" height="250" class="intrebare">
 </div>
 
 <div class="raspuns">
-  <button class="button5" onclick="rau2()"><img id="rau2" src="X.png" width="70" height="70"></button>
-  <button class="button4" onclick="rau1()"><img id="rau1" class="v" src="X.png" width="70" height="70"></button>
-  <button class="button6" onclick="bun()"><img id="bun" class="v" src="V.png" width="70" height="70"></button>
+  <button id="b1" class="button5" onclick="rau1()"><img id="rau1" src="X.png" width="70" height="70"></button>
+  <button id="b2" class="button4" onclick="bun()"><img id="bun" class="v" src="V.png" width="70" height="70"></button>
+  <button id="b3" class="button6" onclick="rau2()"><img id="rau2" class="v" src="X.png" width="70" height="70"></button>
 </div>
 
-<a href="pag3.html"><img id="next" class="next" src="next.png" width="150" height="150"></a>
+<a href="pag2.html"><img id="next" class="next" src="next.png" width="150" height="150"></a>
 
 <script>
 var b = document.getElementById("bun");
@@ -116,9 +99,13 @@ var r2=document.getElementById("rau2");
 r2.style.display = "none";
 var next=document.getElementById("next");
 next.style.display = "none";
+var button2= document.getElementById("b1")
+var button3= document.getElementById("b3")
 function bun() {
   b.style.display = '';
   next.style.display='';
+  button2.disabled=true;
+  button3.disabled=true;
 }
 function rau1() {
   r1.style.display = '';
