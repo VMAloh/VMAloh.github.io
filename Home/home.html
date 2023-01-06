@@ -1,20 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="home.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="home.css" />
     <title>Home</title>
-</head>
-<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script></script>
+  </head>
+  <body>
+    <img
+      src="./Utils/images_menu/mr_smurf.png"
+      id="mr_smurf"
+      height="400"
+      widht="300"
+    />
+    <img
+      src="./Utils/images_menu/lady_smurf.png"
+      id="lady_smurf"
+      height="400"
+      widht="300"
+    />
+    <img
+      src="./Utils/images_menu/medalie.png"
+      id="medalie1"
+      height="70"
+      width="60"
+    />
+    <img
+      src="./Utils/images_menu/medalie.png"
+      id="medalie2"
+      height="70"
+      width="60"
+    />
+    <img
+      src="./Utils/images_menu/medalie.png"
+      id="medalie3"
+      height="70"
+      width="60"
+    />
+    <img
+      src="./Utils/images_menu/medalie.png"
+      id="medalie4"
+      height="70"
+      width="60"
+    />
+    <div class="container">
+      <div id="game1" class="box"></div>
+      <div id="game2" class="box"></div>
+      <div id="game3" class="box"></div>
+      <div id="game4" class="box"></div>
+    </div>
+    <audio id="audio_introducere" autoplay>
+      <source src="./Utils/Recordings/Meniu/Introducere.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="audio_joc1">
+      <source
+        src="./Utils/Recordings/Meniu/hover_joc3_scene_din_poveste.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <audio id="audio_joc2">
+      <source
+        src="./Utils/Recordings/Meniu/hover_joc2_ghicitori.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <audio id="audio_joc3">
+      <source
+        src="./Utils/Recordings/Meniu/hover_joc1_numarare_animale.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <audio id="audio_joc4">
+      <source
+        src="./Utils/Recordings/Meniu/hover_joc4_adunarea_scaderea_cu_o_unitate.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <script>
+      $(window).on("load", function () {
+        if (
+          localStorage.getItem("joc1") === null ||
+          localStorage.getItem("joc1") === undefined
+        ) {
+          localStorage.setItem("joc1", "0");
+        }
+        if (
+          localStorage.getItem("joc2") === null ||
+          localStorage.getItem("joc2") === undefined
+        ) {
+          localStorage.setItem("joc2", "0");
+        }
+        if (
+          localStorage.getItem("joc3") === null ||
+          localStorage.getItem("joc3") === undefined
+        ) {
+          localStorage.setItem("joc3", "0");
+        }
+        if (
+          localStorage.getItem("joc4") === null ||
+          localStorage.getItem("joc4") === undefined
+        ) {
+          localStorage.setItem("joc4", "0");
+        }
 
-<div class="container">
-    <div id="game1" class="box">Joc 1</div>
-    <div id="game2" class="box">Joc 2</div>
-    <div id="game3" class="box">Joc 3</div>
-    <div id="game4" class="box">Joc 4</div>
-</div>
+        if (localStorage.getItem("joc1") === "0") {
+          $("#medalie1").hide();
+        }
+        if (localStorage.getItem("joc2") === "0") {
+          $("#medalie2").hide();
+        }
+        if (localStorage.getItem("joc3") === "0") {
+          $("#medalie3").hide();
+        }
+        if (localStorage.getItem("joc4") === "0") {
+          $("#medalie4").hide();
+        }
+      });
+      document.getElementById("game1").onclick = function () {
+        location.href = "Game1/index.html";
+      };
+      document.getElementById("game2").onclick = function () {
+        location.href = "Game2/game2.html";
+      };
+      document.getElementById("game3").onclick = function () {
+        location.href = "Game3/game3.html";
+      };
+      document.getElementById("game4").onclick = function () {
+        location.href = "Game4/game4.html";
+      };
+      $(document).ready(() => {
+        let audio_joc1 = document.getElementById("audio_joc1");
+        let audio_joc2 = document.getElementById("audio_joc2");
+        let audio_joc3 = document.getElementById("audio_joc3");
+        let audio_joc4 = document.getElementById("audio_joc4");
+        let document_introducere = document.getElementById("audio_introducere");
 
-
-<script src="home.js"></script>
-</body>
+        let current_playing_audio = document_introducere;
+        $("#game1").hover(
+          () => {
+            console.log("audio_game1");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc1.play();
+            current_playing_audio = audio_joc1;
+          },
+          () => {}
+        );
+        $("#game2").hover(
+          () => {
+            console.log("audio_game2");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc2.play();
+            current_playing_audio = audio_joc2;
+          },
+          () => {}
+        );
+        $("#game3").hover(
+          () => {
+            console.log("audio_game3");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc3.play();
+            current_playing_audio = audio_joc3;
+          },
+          () => {}
+        );
+        $("#game4").hover(
+          () => {
+            console.log("audio_game4");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc4.play();
+            current_playing_audio = audio_joc4;
+          },
+          () => {}
+        );
+      });
+    </script>
+  </body>
 </html>

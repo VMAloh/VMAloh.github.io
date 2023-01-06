@@ -9,16 +9,17 @@ html{
 }
 .container {
     margin: 20px auto;
-    width: 800px;
-    height: 800px;
+    width: 680px;
+    height: 680px;
     background-color: #eee;
     display: grid;
-    grid-template-columns: 400px 400px;
+    grid-template-columns: 340px 340px;
     /*grid-row: auto;*/
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 }
 .box {
+    
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
@@ -29,4 +30,45 @@ html{
     text-align: center;
     font-size: 40px;
     font-family: sans-serif;
+}
+#game1{
+    background-image: url("./Utils/images_menu/img_joc1.jpeg");
+}
+#game2{
+    background-image: url("./Utils/images_menu/img_joc2.jpeg");
+}
+#game3{
+    background-image: url("./Utils/images_menu/img_joc3.jpg");
+}
+#game4{
+    background-image: url("./Utils/images_menu/img_joc4.jpg");
+}
+#mr_smurf {
+    position:absolute;
+    top:330px;
+}
+#lady_smurf {
+    position:absolute;
+    top:330px;
+    left:1150px;
+}
+#medalie1{
+    position:absolute;
+    top:30px;
+    left:700px;
+}
+#medalie2{
+    position:absolute;
+    top:30px;
+    left:1060px;
+}
+#medalie3{
+    position:absolute;
+    top:380px;
+    left:700px;
+}
+#medalie4{
+    position:absolute;
+    top:380px;
+    left:1060px;
 }
