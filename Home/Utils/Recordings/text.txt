@@ -1,0 +1,148 @@
+meniu:
+->introducere:
+Buna, eu sunt strumfita iar azi ne vom juca impreuna cu multi alti prieteni.
+O sa incepem o noua aventura in lumea animalelor si a personajelor din povesti,
+in care vom descoperii jocuri si prieteni noi. 
+Esti pregatit sa intri in aceasta aventura impreuna cu noi? 
+Atunci pregateste-te si fii gata sa ne distram!
+Langa mine se alfa cele 4 jocuri care ne vor teleporta in lumea prieteniei.
+Pentru a intra intr-un joc du mouse-ul pe imaginea jocului in care vrei sa 
+intrii si apasa click pe mouse, iar aventura va incepe.
+Daca ai indeplinit corect sarcinile unui joc 
+atunci vei primi o insigna a prieteniei.
+Du aventura la sfarsit si castiga toate cele 4 insigne ale prieteniei,
+iar la final vei primi marele premiu - cupa pentru cel mai bun prieten din lume.
+Hai sa pornim impreuna la drum si sa ne jucam!
+->caz intermediar:
+Hai sa ne aventuram impreuna!
+Pentru a porni la drum alege un joc nou, du mouseul pe el si da click!
+Hai sa ne distram impreuna si sa ne facem multi prieteni!
+->final de joc:
+Felicitari! Te-ai descurcat extraordinar si ai adunat toate cele 4 medalii
+ale prieteniei asa ca primesti marea cupa a celui mai bun prieten! Tine-o
+tot asa si fi mereu alaturi de prietenii tai! 
+Pentru a ne juca mai mult impreuna du mouseul pe sageata si apasa click pe ea. 
+Hai sa reluam aventura!
+->hover peste joc1:
+Hai sa numaram prietenele animale!
+->hover peste joc2:
+Ghici ghicitoare ce e!
+->hover peste joc3:
+Hai sa reparam povestea!
+->hover peste joc4:
+Hai sa adunam si sa scadem impreuna!
+
+joc1 numarat animalute:
+->introducere: 
+La marea petrecere a animalelor acestea si-au facut multi prieteni noi
+si s-au distrat impreuna 3 zile si 3 nopti. Dupa petrecere animalutele 
+au fost asa obosite ca nu mai stiau cati prieteni au. Ajuta-i sa isi de-a
+seama cati prieteni sunt! Deci hai sa numaram cate animale sunt. 
+Pentru a raspunde du mouseul pe patratul alb, apasa click pe el si cauta numarul
+corect de animale pe tastatura! Dupa ce ai gasit numarul pe tastatura apasa pe el 
+pentru a introduce raspunsul tau. Esti pregatit? Hai sa ajutam animalele sa stie cati
+prieteni au!
+->ecran1: !!!
+->ecran2: !!!
+->ecran3: !!!
+->final bun:
+Super ai reusit sa obtii o isigna a prieteniei, tine-o tot asa si strange toate insignele!
+Pentru a te intoarce in meniul principal unde se afla jocurile si alte aventuri noi
+ pune mouse-ul deasupra imaginii cu casa si apasa
+click
+->final rau:
+Off nu ai reusit sa obti o insigna a prieteniei la acest joc dar nu te demoraliza
+Mai incearca iar data viitoare cu siguranta vei reusi.
+Pentru a te intoarce in meniul principal unde se afla jocurile si alte aventuri noi
+ pune mouse-ul deasupra imaginii cu casa si apasa click
+
+joc2 ghicitori:
+->introducere:
+Ursuletul Winnie the Pooh si prietenii sai au mers impreuna la plimbare in padure
+pentru a cauta miere, dar padurea era asa mare ca din pacate s-au pierdut unul de
+celalt. Ajuta-l pe ursuletul winnie the pooh sa isi gaseasca cei 3 prieteni.
+Pentru ai gasi prietenii trebuie sa raspunzi corect la 3 ghicitori. Esti gata? 
+Hai in aventura sa gasim prietenii lui winnie the pooh!
+->ghicitoare1: !!!
+->ghicitoare2: !!!
+->ghicitoare3: !!!
+->final:
+Felicitari! ai raspuns corect la toate cele 3 ghicitori si ai reusit sa gasesti
+toti prietenii lui winnie the pooh, iar acum accesta este foarte fericit sa 
+isi revada si imbratiseze prietenii. Ai fost un prieten pe cinste pentru ca
+l-ai ajutat pe winnie de pooh asa ca ai castigat o insigna a prieteniei.
+Tine-o tot asa! 
+Pentru a te intoarce in meniul principal unde se afla jocurile si alte aventuri noi
+ pune mouse-ul deasupra imaginii cu casa si apasa click
+->final insucces:
+Off nu ai reusit sa gasesti toti prietenii lui winnie the pooh asa ca
+ nu ai obtinut o insigna a prieteniei la acest joc dar nu te demoraliza
+Mai incearca iar data viitoare cu siguranta vei reusi.
+Pentru a te intoarce in meniul principal unde se afla jocurile si alte aventuri noi
+ pune mouse-ul deasupra imaginii cu casa si apasa click
+
+joc3 scene din poveste:
+->introducere:
+Bine ai venit. Avem nevoie de ajutorul tau. Strumful stangaci a incurcat din greseala
+scenele din povestea cu ursul pacalit de vulpe, iar acum nu mai stie care
+e ordinea corecta a povestii. Ajuta-l pe strumful stangaci sa refaca povestea
+ursului pacalit de vulpe altfel acesta va intra intr-un mare bucluc. 
+Pentru a aranja corect imaginile din poveste pune mouseul si apasa click pe o scena 
+din poveste, iar apoi pune mouseul si apasa click pe numarul corect al scenei.
+Esti pregatit? Hai sa il ajutam pe strumf sa aranjeze scenele din povestea
+ursul pacalit de vulpe in ordinea corecta!
+->final succes:
+Felicitari ai reusit sa ordonezi corect povestea si l-ai ajutat pe strumful stangaci!
+E bine sa iti ajuti prietenii la nevoie, nu ca vulpea care l-a pacalit pe saracul urs
+pentru a fura peste. Pentru ca ai fost un prieten asa bun ai castigat o insigna a prieteniei.
+Bravo! Tine-o tot asa si ajuta-ti mereu prietenii la greu.
+Pentru a te intoarce in meniul principal unde se afla jocurile si alte aventuri noi
+ pune mouse-ul deasupra imaginii cu casa si apasa click
+->final insucces:
+Off nu ai reusit sa aranjezi toate scenele din poveste in ordinea potrivita,
+dar nu te demoraliza, mai incearca, iar data viitoare cu siguranta vei reusi.
+Pentru a te intoarce in meniul principal unde se afla jocurile si alte aventuri noi
+ pune mouse-ul deasupra imaginii cu casa si apasa click
+
+joc4 adunarea/scaderea cu o unitate:
+->introducere:
+In timp ce se juca la gradina zoologica strumful stangaci a dat din greseala drumul la cateva animale, iar acestea au scapat de la gradina zoologica.Acum Strumful stangaci trebuie sa le prinda
+si sa le duca inapoi in singuranta la gradina zoologica, altfel va intra intr-un mare bucluc, hai sa il ajutam pe strumf sa recupereze toate animalele pierdute. 
+->ecran1:
+Strumful stangaci a prins 6 maimutele si aceasta mai vede inca o maimutica jucausa pe care reuseste sa o prinda. Cate maimutele a prins strumful? Pentru a raspunde la intrebare pune mouseul pe cifra corecta de maimutele si apasa click
+->ecran2:
+Strumful stangaci a prins 3 ursi panda, dar un ursulet buclucas s-a catarat intr-un copac si a fugit din nou. cati ursi panda a prins pana acum strumful?
+Pentru a raspunde la intrebare pune mouseul pe cifra corecta de ursi panda si apasa click
+->ecran3:
+Strumful stangaci a prins 4 zebre care mancau inghetata si acesta mai vede o zebra jucausa pe care reuseste sa o prinda. Oare cate zebre are pana acum strunful stangaci?
+Pentru a raspunde la intrebare pune mouseul pe cifra corecta de zebre si apasa click
+->final succes:
+Felicitari ai reusit sa-l ajuti pe strumful stangaci sa recupereze toate animalele pierdute de la zoo. Esti un prieten de nadejde! Pentru ca ai fost un prieten asa bun si l-ai ajutat pe strumf ai castigat o insigna a prieteniei. Tine-o tot asa si ajuta-ti mereu prietenii la greu!
+Pentru a te intoarce in meniul principal unde se afla jocurile si alte aventuri noi
+ pune mouse-ul deasupra imaginii cu casa si apasa click
+->Caz succes:
+Bravo! Ai raspuns corect, Tine-o tot asa. Pentru a merge la urmatoarea aventura pune mouseul pe  sageata din coltul de jos al ecranului si apasa cllick
+
+ Ai raspuns corect! Prietenii tai sunt norocosi sa te aibe in preajma., Tine-o tot asa. Pentru a merge la urmatoarea aventura apasa pe sageata din coltul de jos al ecranului
+
+altele in timpul jocului:
+->caz succes:
+1. Bravo! Ai raspuns corect, Tine-o tot asa.
+2. Super! Ai raspuns corect.
+3. Yay! Raspuns corect.
+4. Bravo! Te descurci minunat!
+5. Ai raspuns corect! Prietenii tai sunt norocosi sa te aibe in preajma.
+6. Ai raspun corect! Esti de mare ajutor.
+7. Bravo! Ai raspuns corect, ai facut o treaba buna
+
+->caz inscucces:
+1. Off ai raspuns gresit, dar nu te descuraja, mai incearca!
+2. Din pacate raspunsul e gresit, dar am incredere in tine ca data viitoare vei reusi!
+3. Off ai raspuns gresit, dar cu totii mai facem greseli asa ca mai incearca si vei reusi!
+4. Ai raspuns gresit, dar nu fii deprimat, data viitoare va fi mai bine!
+
+
+
+
+
+   
