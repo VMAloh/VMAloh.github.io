@@ -3,7 +3,7 @@
 <style>
 .zebre{
   position: relative;
-  left: -50px;
+  left: -100px;
 }
 .plus {
     position: relative;
@@ -18,11 +18,10 @@
 .egal{
   position: relative;
   top: 120px;
-  right: 30px;
 }
 .intrebare{
   position: relative;
-  left: 10px;
+  left: 70px;
   top: 50px;
 }
 .adunare{
@@ -51,7 +50,7 @@
   width: 150px;
   height: 150px;
   border: none;
-  background: url("7.png") no-repeat;
+  background: url("4.png") no-repeat;
   background-size: 100% 100%;
 }
 .button6 {
@@ -75,17 +74,17 @@
 </head>
 <body style="background-color:#FFFFE0">
   <div class="adunare">
-  <img src="6maimute.png" width="600" height="400" class="zebre">
+  <img src="4zebre.png" width="400" height="400" class="zebre">
   <img src="plus.png" width="150" height="150" class="plus">
-  <img src="maimuta.png" width="250" height="250" class="zebra">
+  <img src="zebra.png" width="250" height="250" class="zebra">
   <img src="egal.png" width="150" height="150" class="egal">
   <img src="question.png" width="150" height="250" class="intrebare">
 </div>
 
 <div class="raspuns">
-  <button class="button5" onclick="rau1()"><img id="rau1" src="X.png" width="70" height="70"></button>
-  <button class="button4" onclick="bun()"><img id="bun" class="v" src="V.png" width="70" height="70"></button>
-  <button class="button6" onclick="rau2()"><img id="rau2" class="v" src="X.png" width="70" height="70"></button>
+  <button id="b1" class="button5" onclick="bun()"><img id="bun" src="V.png" width="70" height="70"></button>
+  <button id="b2" class="button4" onclick="rau1()"><img id="rau1" class="v" src="X.png" width="70" height="70"></button>
+  <button id="b3" class="button6" onclick="rau2()"><img id="rau2" class="v" src="X.png" width="70" height="70"></button>
 </div>
 
 <a href="pag2.html"><img id="next" class="next" src="next.png" width="150" height="150"></a>
@@ -99,9 +98,13 @@ var r2=document.getElementById("rau2");
 r2.style.display = "none";
 var next=document.getElementById("next");
 next.style.display = "none";
+var button2= document.getElementById("b2")
+var button3= document.getElementById("b3")
 function bun() {
   b.style.display = '';
   next.style.display='';
+  button2.disabled=true;
+  button3.disabled=true;
 }
 function rau1() {
   r1.style.display = '';
