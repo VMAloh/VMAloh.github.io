@@ -77,7 +77,54 @@
         type="audio/mp3"
       />
     </audio>
+    <audio id="audio_final">
+      <source src="./Utils/Recordings/Meniu/Final.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="audio_intermediar">
+      <source src="./Utils/Recordings/Meniu/Intermediar.mp3" type="audio/mp3" />
+    </audio>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 style="display: block; margin-left: auto; margin-right: auto">
+          Felicitari, ai facut bine la toate jocurile. Stumfita te premiaza cu o
+          cupa
+        </h2>
+        <img
+          src="Utils/images_menu/cupa.png"
+          style="display: block; margin-left: auto; margin-right: auto"
+        />
+      </div>
+    </div>
+
     <script>
+      let audio_joc1 = document.getElementById("audio_joc1");
+      let audio_joc2 = document.getElementById("audio_joc2");
+      let audio_joc3 = document.getElementById("audio_joc3");
+      let audio_joc4 = document.getElementById("audio_joc4");
+      let audio_final = document.getElementById("audio_final");
+      let document_introducere = document.getElementById("audio_introducere");
+      let audio_intermediar = document.getElementById("audio_intermediar");
+      let current_playing_audio = document_introducere;
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
       $(window).on("load", function () {
         if (
           localStorage.getItem("joc1") === null ||
@@ -103,18 +150,43 @@
         ) {
           localStorage.setItem("joc4", "0");
         }
+        let joc1 = localStorage.getItem("joc1");
+        let joc2 = localStorage.getItem("joc2");
+        let joc3 = localStorage.getItem("joc3");
+        let joc4 = localStorage.getItem("joc4");
 
-        if (localStorage.getItem("joc1") === "0") {
+        if (joc1 === "0") {
           $("#medalie1").hide();
         }
-        if (localStorage.getItem("joc2") === "0") {
+        if (joc2 === "0") {
           $("#medalie2").hide();
         }
-        if (localStorage.getItem("joc3") === "0") {
+        if (joc3 === "0") {
           $("#medalie3").hide();
         }
-        if (localStorage.getItem("joc4") === "0") {
+        if (joc4 === "0") {
           $("#medalie4").hide();
+        }
+        if (joc1 === "1" && joc2 === "1" && joc3 === "1" && joc4 === "1") {
+          modal.style.display = "block";
+          if (current_playing_audio !== null) {
+            current_playing_audio.pause();
+            current_playing_audio.currentTime = 0;
+          }
+          audio_final.play();
+          current_playing_audio = audio_final;
+        } else if (
+          joc1 === "1" ||
+          joc2 === "1" ||
+          joc3 === "1" ||
+          joc4 === "1"
+        ) {
+          if (current_playing_audio !== null) {
+            current_playing_audio.pause();
+            current_playing_audio.currentTime = 0;
+          }
+          audio_intermediar.play();
+          current_playing_audio = audio_intermediar;
         }
       });
       document.getElementById("game1").onclick = function () {
@@ -130,13 +202,6 @@
         location.href = "Game4/game4.html";
       };
       $(document).ready(() => {
-        let audio_joc1 = document.getElementById("audio_joc1");
-        let audio_joc2 = document.getElementById("audio_joc2");
-        let audio_joc3 = document.getElementById("audio_joc3");
-        let audio_joc4 = document.getElementById("audio_joc4");
-        let document_introducere = document.getElementById("audio_introducere");
-
-        let current_playing_audio = document_introducere;
         $("#game1").hover(
           () => {
             console.log("audio_game1");
