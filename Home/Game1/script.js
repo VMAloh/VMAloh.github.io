@@ -1,4 +1,6 @@
 console.clear();
+let clearSquares = false;
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -8,6 +10,13 @@ function drag(ev) {
 }
 
 function drop(ev) {
+  if (clearSquares === false) {
+    for (let i = 1; i <= 6; i++) {
+      const node = document.getElementById("div2" + i);
+      node.style.borderColor = "#51108e";
+    }
+    clearSquares = true;
+  }
   ev.preventDefault();
   var data = ev.dataTransfer.getData("Text");
   var dragged = document.getElementById(data);
@@ -51,6 +60,8 @@ function check() {
 
     i++;
   }
+
+  clearSquares = false;
 
   if (correctGlobal) {
     alert("Perfect");
