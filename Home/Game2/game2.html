@@ -2,10 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <title>Ghcitori</title>
 </head>
-<body>
-Game2 works!
+<body >
+    <img src="pictures/speaker-logo.png" class="speaker" alt="speaker">
+    <div class="container">
+        <img src="pictures/winnie.png" id="winnie" alt="Winnie the pooh">
+       <div id="question-container" class="hide">
+           <div id="question">Question</div>
+           <div id="answer-buttons" class="btn-grid ">
+               <button class="btn ">Answer 1</button>
+               <button class="btn ">Answer 2</button>
+               <button class="btn">Answer 3</button>
+               <button class="btn">Answer 4</button>
+           </div>
+       </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="start-btn btn hide">Next</button>
+        </div>
 
+    </div>
+<!--    <div id="sad-popup" class="popup ">-->
+<!--        <img src="pictures/sad-winnie.gif">-->
+<!--    </div>-->
 </body>
 </html>
