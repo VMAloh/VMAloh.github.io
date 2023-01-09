@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="home.css" />
   <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script></script>
 </head>
@@ -16,6 +17,11 @@
   <img src="./Utils/images_menu/medalie.png" id="medalie2" height="70" width="60" />
   <img src="./Utils/images_menu/medalie.png" id="medalie3" height="70" width="60" />
   <img src="./Utils/images_menu/medalie.png" id="medalie4" height="70" width="60" />
+  <div>
+    <p id="reset" style="position: absolute; left: 78%; top: 20px; font-size: 36px">
+      Reseteaza jocul <i class="fa fa-refresh"></i>
+    </p>
+  </div>
   <div class="container">
     <div id="game1" class="box"></div>
     <div id="game2" class="box"></div>
@@ -143,63 +149,128 @@
       }
     });
     document.getElementById("game1").onclick = function () {
-      location.href = "Game1/index.html";
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game1/index.html";
+      }
     };
     document.getElementById("game2").onclick = function () {
-      location.href = "Game2/game2.html";
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game2/game2.html";
+      }
     };
     document.getElementById("game3").onclick = function () {
-      location.href = "Game3/index.html";
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game3/game3.html";
+      }
     };
     document.getElementById("game4").onclick = function () {
-      location.href = "Game4/game4.html";
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game4/game4.html";
+      }
     };
     $(document).ready(() => {
+      $("#reset").click(() => {
+        console.log("resetez jocul");
+        localStorage.setItem("joc1", "0");
+        localStorage.setItem("joc2", "0");
+        localStorage.setItem("joc3", "0");
+        localStorage.setItem("joc4", "0");
+        $("#medalie1").hide();
+        $("#medalie2").hide();
+        $("#medalie3").hide();
+        $("#medalie4").hide();
+        if (current_playing_audio !== null) {
+          current_playing_audio.pause();
+          current_playing_audio.currentTime = 0;
+        }
+        document_introducere.play();
+        current_playing_audio = document_introducere;
+      });
       $("#game1").hover(
         () => {
-          console.log("audio_game1");
-          if (current_playing_audio !== null) {
-            current_playing_audio.pause();
-            current_playing_audio.currentTime = 0;
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game1");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc1.play();
+            current_playing_audio = audio_joc1;
           }
-          audio_joc1.play();
-          current_playing_audio = audio_joc1;
         },
         () => { }
       );
       $("#game2").hover(
         () => {
-          console.log("audio_game2");
-          if (current_playing_audio !== null) {
-            current_playing_audio.pause();
-            current_playing_audio.currentTime = 0;
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game2");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc2.play();
+            current_playing_audio = audio_joc2;
           }
-          audio_joc2.play();
-          current_playing_audio = audio_joc2;
         },
         () => { }
       );
       $("#game3").hover(
         () => {
-          console.log("audio_game3");
-          if (current_playing_audio !== null) {
-            current_playing_audio.pause();
-            current_playing_audio.currentTime = 0;
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game3");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc3.play();
+            current_playing_audio = audio_joc3;
           }
-          audio_joc3.play();
-          current_playing_audio = audio_joc3;
         },
         () => { }
       );
       $("#game4").hover(
         () => {
-          console.log("audio_game4");
-          if (current_playing_audio !== null) {
-            current_playing_audio.pause();
-            current_playing_audio.currentTime = 0;
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game4");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc4.play();
+            current_playing_audio = audio_joc4;
           }
-          audio_joc4.play();
-          current_playing_audio = audio_joc4;
         },
         () => { }
       );
