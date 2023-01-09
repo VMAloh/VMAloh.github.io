@@ -5,13 +5,13 @@
 }
 
 html{
-    background-color:rgb(225, 225, 16);
+    background-color:#F2F7A1;
 }
 .container {
     margin: 20px auto;
     width: 680px;
     height: 680px;
-    background-color: rgb(225, 225, 16);
+    background-color: #F2F7A1;
     display: grid;
     grid-template-columns: 340px 340px;
     /*grid-row: auto;*/
