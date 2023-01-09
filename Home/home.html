@@ -1,333 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="home.css" />
-    <title>Home</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script></script>
-  </head>
-  <body>
-    <img
-      src="./Utils/images_menu/mr_smurf.png"
-      id="mr_smurf"
-      height="400"
-      widht="300"
-    />
-    <img
-      src="./Utils/images_menu/lady_smurf.png"
-      id="lady_smurf"
-      height="400"
-      widht="300"
-    />
-    <img
-      src="./Utils/images_menu/medalie.png"
-      id="medalie1"
-      height="70"
-      width="60"
-    />
-    <img
-      src="./Utils/images_menu/medalie.png"
-      id="medalie2"
-      height="70"
-      width="60"
-    />
-    <img
-      src="./Utils/images_menu/medalie.png"
-      id="medalie3"
-      height="70"
-      width="60"
-    />
-    <img
-      src="./Utils/images_menu/medalie.png"
-      id="medalie4"
-      height="70"
-      width="60"
-    />
-    <div>
-      <p
-        id="reset"
-        style="position: absolute; left: 78%; top: 20px; font-size: 36px"
-      >
-        Reseteaza jocul <i class="fa fa-refresh"></i>
-      </p>
-    </div>
-    <div class="container">
-      <div id="game1" class="box"></div>
-      <div id="game2" class="box"></div>
-      <div id="game3" class="box"></div>
-      <div id="game4" class="box"></div>
-    </div>
-    <audio id="audio_introducere" autoplay>
-      <source src="./Utils/Recordings/Meniu/Introducere.mp3" type="audio/mp3" />
-    </audio>
-    <audio id="audio_joc1">
-      <source
-        src="./Utils/Recordings/Meniu/hover_joc3_scene_din_poveste.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-    <audio id="audio_joc2">
-      <source
-        src="./Utils/Recordings/Meniu/hover_joc2_ghicitori.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-    <audio id="audio_joc3">
-      <source
-        src="./Utils/Recordings/Meniu/hover_joc1_numarare_animale.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-    <audio id="audio_joc4">
-      <source
-        src="./Utils/Recordings/Meniu/hover_joc4_adunarea_scaderea_cu_o_unitate.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-    <audio id="audio_final">
-      <source src="./Utils/Recordings/Meniu/Final.mp3" type="audio/mp3" />
-    </audio>
-    <audio id="audio_intermediar">
-      <source src="./Utils/Recordings/Meniu/Intermediar.mp3" type="audio/mp3" />
-    </audio>
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 style="display: block; margin-left: auto; margin-right: auto">
-          Felicitari, ai facut bine la toate jocurile. Stumfita te premiaza cu o
-          cupa
-        </h2>
-        <img
-          src="Utils/images_menu/cupa.png"
-          style="display: block; margin-left: auto; margin-right: auto"
-        />
-      </div>
-    </div>
 
-    <script>
-      let audio_joc1 = document.getElementById("audio_joc1");
-      let audio_joc2 = document.getElementById("audio_joc2");
-      let audio_joc3 = document.getElementById("audio_joc3");
-      let audio_joc4 = document.getElementById("audio_joc4");
-      let audio_final = document.getElementById("audio_final");
-      let document_introducere = document.getElementById("audio_introducere");
-      let audio_intermediar = document.getElementById("audio_intermediar");
-      let current_playing_audio = document_introducere;
-      // Get the modal
-      var modal = document.getElementById("myModal");
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="home.css" />
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script></script>
+</head>
 
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
+<body>
+  <img src="./Utils/images_menu/mr_smurf.png" id="mr_smurf" height="400" widht="300" />
+  <img src="./Utils/images_menu/lady_smurf.png" id="lady_smurf" height="400" widht="300" />
+  <img src="./Utils/images_menu/medalie.png" id="medalie1" height="70" width="60" />
+  <img src="./Utils/images_menu/medalie.png" id="medalie2" height="70" width="60" />
+  <img src="./Utils/images_menu/medalie.png" id="medalie3" height="70" width="60" />
+  <img src="./Utils/images_menu/medalie.png" id="medalie4" height="70" width="60" />
+  <div>
+    <p id="reset" style="position: absolute; left: 78%; top: 20px; font-size: 36px">
+      Reseteaza jocul <i class="fa fa-refresh"></i>
+    </p>
+  </div>
+  <div class="container">
+    <div id="game1" class="box"></div>
+    <div id="game2" class="box"></div>
+    <div id="game3" class="box"></div>
+    <div id="game4" class="box"></div>
+  </div>
+  <audio id="audio_introducere" autoplay>
+    <source src="./Utils/Recordings/Meniu/Introducere.mp3" type="audio/mp3" />
+  </audio>
+  <audio id="audio_joc1">
+    <source src="./Utils/Recordings/Meniu/hover_joc3_scene_din_poveste.mp3" type="audio/mp3" />
+  </audio>
+  <audio id="audio_joc2">
+    <source src="./Utils/Recordings/Meniu/hover_joc2_ghicitori.mp3" type="audio/mp3" />
+  </audio>
+  <audio id="audio_joc3">
+    <source src="./Utils/Recordings/Meniu/hover_joc1_numarare_animale.mp3" type="audio/mp3" />
+  </audio>
+  <audio id="audio_joc4">
+    <source src="./Utils/Recordings/Meniu/hover_joc4_adunarea_scaderea_cu_o_unitate.mp3" type="audio/mp3" />
+  </audio>
+  <audio id="audio_final">
+    <source src="./Utils/Recordings/Meniu/Final.mp3" type="audio/mp3" />
+  </audio>
+  <audio id="audio_intermediar">
+    <source src="./Utils/Recordings/Meniu/Intermediar.mp3" type="audio/mp3" />
+  </audio>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <img src="Utils/images_menu/close.png" class="close">
+      <img src="Utils/images_menu/cupa.png" class="imgCupa" />
+    </div>
+  </div>
 
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function () {
+  <script>
+    let audio_joc1 = document.getElementById("audio_joc1");
+    let audio_joc2 = document.getElementById("audio_joc2");
+    let audio_joc3 = document.getElementById("audio_joc3");
+    let audio_joc4 = document.getElementById("audio_joc4");
+    let audio_final = document.getElementById("audio_final");
+    let document_introducere = document.getElementById("audio_introducere");
+    let audio_intermediar = document.getElementById("audio_intermediar");
+    let current_playing_audio = document_introducere;
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
         modal.style.display = "none";
-      };
+      }
+    };
 
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
+    $(window).on("load", function () {
+      if (
+        localStorage.getItem("joc1") === null ||
+        localStorage.getItem("joc1") === undefined
+      ) {
+        localStorage.setItem("joc1", "0");
+      }
+      if (
+        localStorage.getItem("joc2") === null ||
+        localStorage.getItem("joc2") === undefined
+      ) {
+        localStorage.setItem("joc2", "0");
+      }
+      if (
+        localStorage.getItem("joc3") === null ||
+        localStorage.getItem("joc3") === undefined
+      ) {
+        localStorage.setItem("joc3", "0");
+      }
+      if (
+        localStorage.getItem("joc4") === null ||
+        localStorage.getItem("joc4") === undefined
+      ) {
+        localStorage.setItem("joc4", "0");
+      }
+      let joc1 = localStorage.getItem("joc1");
+      let joc2 = localStorage.getItem("joc2");
+      let joc3 = localStorage.getItem("joc3");
+      let joc4 = localStorage.getItem("joc4");
 
-      $(window).on("load", function () {
-        if (
-          localStorage.getItem("joc1") === null ||
-          localStorage.getItem("joc1") === undefined
-        ) {
-          localStorage.setItem("joc1", "0");
+      if (joc1 === "0") {
+        $("#medalie1").hide();
+      }
+      if (joc2 === "0") {
+        $("#medalie2").hide();
+      }
+      if (joc3 === "0") {
+        $("#medalie3").hide();
+      }
+      if (joc4 === "0") {
+        $("#medalie4").hide();
+      }
+      if (joc1 === "1" && joc2 === "1" && joc3 === "1" && joc4 === "1") {
+        modal.style.display = "block";
+        if (current_playing_audio !== null) {
+          current_playing_audio.pause();
+          current_playing_audio.currentTime = 0;
         }
-        if (
-          localStorage.getItem("joc2") === null ||
-          localStorage.getItem("joc2") === undefined
-        ) {
-          localStorage.setItem("joc2", "0");
+        audio_final.play();
+        current_playing_audio = audio_final;
+      } else if (
+        joc1 === "1" ||
+        joc2 === "1" ||
+        joc3 === "1" ||
+        joc4 === "1"
+      ) {
+        if (current_playing_audio !== null) {
+          current_playing_audio.pause();
+          current_playing_audio.currentTime = 0;
         }
-        if (
-          localStorage.getItem("joc3") === null ||
-          localStorage.getItem("joc3") === undefined
-        ) {
-          localStorage.setItem("joc3", "0");
+        audio_intermediar.play();
+        current_playing_audio = audio_intermediar;
+      }
+    });
+    document.getElementById("game1").onclick = function () {
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game1/index.html";
+      }
+    };
+    document.getElementById("game2").onclick = function () {
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game2/game2.html";
+      }
+    };
+    document.getElementById("game3").onclick = function () {
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game3/game3.html";
+      }
+    };
+    document.getElementById("game4").onclick = function () {
+      if (
+        (current_playing_audio !== document_introducere &&
+          current_playing_audio != audio_intermediar) ||
+        current_playing_audio.paused
+      ) {
+        location.href = "Game4/game4.html";
+      }
+    };
+    $(document).ready(() => {
+      $("#reset").click(() => {
+        console.log("resetez jocul");
+        localStorage.setItem("joc1", "0");
+        localStorage.setItem("joc2", "0");
+        localStorage.setItem("joc3", "0");
+        localStorage.setItem("joc4", "0");
+        $("#medalie1").hide();
+        $("#medalie2").hide();
+        $("#medalie3").hide();
+        $("#medalie4").hide();
+        if (current_playing_audio !== null) {
+          current_playing_audio.pause();
+          current_playing_audio.currentTime = 0;
         }
-        if (
-          localStorage.getItem("joc4") === null ||
-          localStorage.getItem("joc4") === undefined
-        ) {
-          localStorage.setItem("joc4", "0");
-        }
-        let joc1 = localStorage.getItem("joc1");
-        let joc2 = localStorage.getItem("joc2");
-        let joc3 = localStorage.getItem("joc3");
-        let joc4 = localStorage.getItem("joc4");
-
-        if (joc1 === "0") {
-          $("#medalie1").hide();
-        }
-        if (joc2 === "0") {
-          $("#medalie2").hide();
-        }
-        if (joc3 === "0") {
-          $("#medalie3").hide();
-        }
-        if (joc4 === "0") {
-          $("#medalie4").hide();
-        }
-        if (joc1 === "1" && joc2 === "1" && joc3 === "1" && joc4 === "1") {
-          modal.style.display = "block";
-          if (current_playing_audio !== null) {
-            current_playing_audio.pause();
-            current_playing_audio.currentTime = 0;
-          }
-          audio_final.play();
-          current_playing_audio = audio_final;
-        } else if (
-          joc1 === "1" ||
-          joc2 === "1" ||
-          joc3 === "1" ||
-          joc4 === "1"
-        ) {
-          if (current_playing_audio !== null) {
-            current_playing_audio.pause();
-            current_playing_audio.currentTime = 0;
-          }
-          audio_intermediar.play();
-          current_playing_audio = audio_intermediar;
-        }
+        document_introducere.play();
+        current_playing_audio = document_introducere;
       });
-      document.getElementById("game1").onclick = function () {
-        if (
-          (current_playing_audio !== document_introducere &&
-            current_playing_audio != audio_intermediar) ||
-          current_playing_audio.paused
-        ) {
-          location.href = "Game1/index.html";
-        }
-      };
-      document.getElementById("game2").onclick = function () {
-        if (
-          (current_playing_audio !== document_introducere &&
-            current_playing_audio != audio_intermediar) ||
-          current_playing_audio.paused
-        ) {
-          location.href = "Game2/game2.html";
-        }
-      };
-      document.getElementById("game3").onclick = function () {
-        if (
-          (current_playing_audio !== document_introducere &&
-            current_playing_audio != audio_intermediar) ||
-          current_playing_audio.paused
-        ) {
-          location.href = "Game3/game3.html";
-        }
-      };
-      document.getElementById("game4").onclick = function () {
-        if (
-          (current_playing_audio !== document_introducere &&
-            current_playing_audio != audio_intermediar) ||
-          current_playing_audio.paused
-        ) {
-          location.href = "Game4/game4.html";
-        }
-      };
-      $(document).ready(() => {
-        $("#reset").click(() => {
-          console.log("resetez jocul");
-          localStorage.setItem("joc1", "0");
-          localStorage.setItem("joc2", "0");
-          localStorage.setItem("joc3", "0");
-          localStorage.setItem("joc4", "0");
-          $("#medalie1").hide();
-          $("#medalie2").hide();
-          $("#medalie3").hide();
-          $("#medalie4").hide();
-          if (current_playing_audio !== null) {
-            current_playing_audio.pause();
-            current_playing_audio.currentTime = 0;
+      $("#game1").hover(
+        () => {
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game1");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
+            }
+            audio_joc1.play();
+            current_playing_audio = audio_joc1;
           }
-          document_introducere.play();
-          current_playing_audio = document_introducere;
-        });
-        $("#game1").hover(
-          () => {
-            if (
-              (current_playing_audio === document_introducere ||
-                current_playing_audio === audio_intermediar) &&
-              current_playing_audio.paused
-            ) {
-              console.log("audio_game1");
-              if (current_playing_audio !== null) {
-                current_playing_audio.pause();
-                current_playing_audio.currentTime = 0;
-              }
-              audio_joc1.play();
-              current_playing_audio = audio_joc1;
+        },
+        () => { }
+      );
+      $("#game2").hover(
+        () => {
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game2");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
             }
-          },
-          () => {}
-        );
-        $("#game2").hover(
-          () => {
-            if (
-              (current_playing_audio === document_introducere ||
-                current_playing_audio === audio_intermediar) &&
-              current_playing_audio.paused
-            ) {
-              console.log("audio_game2");
-              if (current_playing_audio !== null) {
-                current_playing_audio.pause();
-                current_playing_audio.currentTime = 0;
-              }
-              audio_joc2.play();
-              current_playing_audio = audio_joc2;
+            audio_joc2.play();
+            current_playing_audio = audio_joc2;
+          }
+        },
+        () => { }
+      );
+      $("#game3").hover(
+        () => {
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game3");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
             }
-          },
-          () => {}
-        );
-        $("#game3").hover(
-          () => {
-            if (
-              (current_playing_audio === document_introducere ||
-                current_playing_audio === audio_intermediar) &&
-              current_playing_audio.paused
-            ) {
-              console.log("audio_game3");
-              if (current_playing_audio !== null) {
-                current_playing_audio.pause();
-                current_playing_audio.currentTime = 0;
-              }
-              audio_joc3.play();
-              current_playing_audio = audio_joc3;
+            audio_joc3.play();
+            current_playing_audio = audio_joc3;
+          }
+        },
+        () => { }
+      );
+      $("#game4").hover(
+        () => {
+          if (
+            (current_playing_audio === document_introducere ||
+              current_playing_audio === audio_intermediar) &&
+            current_playing_audio.paused
+          ) {
+            console.log("audio_game4");
+            if (current_playing_audio !== null) {
+              current_playing_audio.pause();
+              current_playing_audio.currentTime = 0;
             }
-          },
-          () => {}
-        );
-        $("#game4").hover(
-          () => {
-            if (
-              (current_playing_audio === document_introducere ||
-                current_playing_audio === audio_intermediar) &&
-              current_playing_audio.paused
-            ) {
-              console.log("audio_game4");
-              if (current_playing_audio !== null) {
-                current_playing_audio.pause();
-                current_playing_audio.currentTime = 0;
-              }
-              audio_joc4.play();
-              current_playing_audio = audio_joc4;
-            }
-          },
-          () => {}
-        );
-      });
-    </script>
-  </body>
+            audio_joc4.play();
+            current_playing_audio = audio_joc4;
+          }
+        },
+        () => { }
+      );
+    });
+  </script>
+</body>
+
 </html>
