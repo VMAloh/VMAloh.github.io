@@ -5,8 +5,10 @@ document.getElementById("game2").onclick = function () {
     location.href = "Game2/game2.html";
 };
 document.getElementById("game3").onclick = function () {
-    location.href = "Game3/game3.html";
+    location.href = "Game3/";
 };
 document.getElementById("game4").onclick = function () {
     location.href = "Game4/game4.html";
 };
+
+localStorage.setItem("countAnimalsGame", 0)
