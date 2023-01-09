@@ -35,11 +35,12 @@ function drop(ev) {
 }
 
 function check() {
+  //let modal = document.getElementById("myModal");
+  //modal.style.display = "block";
   var i = 1;
   var correct = true;
   var correctGlobal = true;
   var numImages = 6;
-  let wrongDivs = [];
 
   while (i <= numImages) {
     //node = document.getElementById("drag1" + i);
@@ -64,6 +65,28 @@ function check() {
   clearSquares = false;
 
   if (correctGlobal) {
-    alert("Perfect");
-  } else alert("Wrong");
+    //alert("Perfect");
+    localStorage.setItem("joc1", 1);
+    let modal = document.getElementById("myModal");
+    modal.style.display = "block";
+  } else {
+    //alert("Wrong");
+    let audioWrong = document.getElementById("audioWrongAnswer");
+    audioWrong.play();
+  }
+}
+
+function playIntro() {
+  let audioIntro = document.getElementById("audioIntroStory");
+  audioIntro.play();
+}
+
+function closeModal() {
+  let modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+function goToHome() {
+  let locationString = location.pathname;
+  location.href = locationString.replace("/Game1/index.html", "/home.html");
 }
