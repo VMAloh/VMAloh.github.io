@@ -69,6 +69,8 @@ function check() {
     localStorage.setItem("joc1", 1);
     let modal = document.getElementById("myModal");
     modal.style.display = "block";
+    let audioCorrect = document.getElementById("audioCorrectAnswer");
+    audioCorrect.play();
   } else {
     //alert("Wrong");
     let audioWrong = document.getElementById("audioWrongAnswer");
