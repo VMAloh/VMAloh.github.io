@@ -203,7 +203,8 @@
       });
       document.getElementById("game1").onclick = function () {
         if (
-          current_playing_audio !== document_introducere ||
+          (current_playing_audio !== document_introducere &&
+            current_playing_audio != audio_intermediar) ||
           current_playing_audio.paused
         ) {
           location.href = "Game1/index.html";
@@ -211,7 +212,8 @@
       };
       document.getElementById("game2").onclick = function () {
         if (
-          current_playing_audio !== document_introducere ||
+          (current_playing_audio !== document_introducere &&
+            current_playing_audio != audio_intermediar) ||
           current_playing_audio.paused
         ) {
           location.href = "Game2/game2.html";
@@ -219,7 +221,8 @@
       };
       document.getElementById("game3").onclick = function () {
         if (
-          current_playing_audio !== document_introducere ||
+          (current_playing_audio !== document_introducere &&
+            current_playing_audio != audio_intermediar) ||
           current_playing_audio.paused
         ) {
           location.href = "Game3/game3.html";
@@ -227,7 +230,8 @@
       };
       document.getElementById("game4").onclick = function () {
         if (
-          current_playing_audio !== document_introducere ||
+          (current_playing_audio !== document_introducere &&
+            current_playing_audio != audio_intermediar) ||
           current_playing_audio.paused
         ) {
           location.href = "Game4/game4.html";
@@ -254,7 +258,8 @@
         $("#game1").hover(
           () => {
             if (
-              current_playing_audio === document_introducere &&
+              (current_playing_audio === document_introducere ||
+                current_playing_audio === audio_intermediar) &&
               current_playing_audio.paused
             ) {
               console.log("audio_game1");
@@ -271,7 +276,8 @@
         $("#game2").hover(
           () => {
             if (
-              current_playing_audio === document_introducere &&
+              (current_playing_audio === document_introducere ||
+                current_playing_audio === audio_intermediar) &&
               current_playing_audio.paused
             ) {
               console.log("audio_game2");
@@ -288,7 +294,8 @@
         $("#game3").hover(
           () => {
             if (
-              current_playing_audio === document_introducere &&
+              (current_playing_audio === document_introducere ||
+                current_playing_audio === audio_intermediar) &&
               current_playing_audio.paused
             ) {
               console.log("audio_game3");
@@ -305,7 +312,8 @@
         $("#game4").hover(
           () => {
             if (
-              current_playing_audio === document_introducere &&
+              (current_playing_audio === document_introducere ||
+                current_playing_audio === audio_intermediar) &&
               current_playing_audio.paused
             ) {
               console.log("audio_game4");
