@@ -1,118 +1,165 @@
 <html>
 <head>
-<style>
-.zebre{
-  position: relative;
-  left: -50px;
-}
-.plus {
-    position: relative;
-    top: 120px;
-    left: -80px;
-}
-.zebra {
-    position: relative;
-    top: 70px;
-    left: -60px;
-}
-.egal{
-  position: relative;
-  top: 120px;
-  right: 30px;
-}
-.intrebare{
-  position: relative;
-  left: 10px;
-  top: 50px;
-}
-.adunare{
-  position: absolute;
-  top: 70;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-}
-.raspuns{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-.button5 {
-  width: 150px;
-  height: 150px;
-  border: none;
-  background: url("5.png") no-repeat;
-  background-size: 100% 100%;
-}
-.button4 {
-  width: 150px;
-  height: 150px;
-  border: none;
-  background: url("7.png") no-repeat;
-  background-size: 100% 100%;
-}
-.button6 {
-  width: 150px;
-  height: 150px;
-  border: none;
-  background: url("6.png") no-repeat;
-  background-size: 100% 100%;
-}
-.v {
-  position: relative;
-  bottom: 0;
-  right: 0;
-}
-.next{
-    position: absolute;
-    bottom: 0;
-    right: 50;
-}
-</style>
+    <style>
+        .zebre {
+            position: relative;
+            left: -50px;
+        }
+
+        .plus {
+            position: relative;
+            top: 120px;
+            left: -80px;
+        }
+
+        .zebra {
+            position: relative;
+            top: 70px;
+            left: -60px;
+        }
+
+        .egal {
+            position: relative;
+            top: 120px;
+            right: 30px;
+        }
+
+        .intrebare {
+            position: relative;
+            left: 10px;
+            top: 50px;
+        }
+
+        .adunare {
+            position: absolute;
+            top: 70;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .raspuns {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .button5 {
+            width: 150px;
+            height: 150px;
+            border: none;
+            background: url("5.png") no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .button4 {
+            width: 150px;
+            height: 150px;
+            border: none;
+            background: url("7.png") no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .button6 {
+            width: 150px;
+            height: 150px;
+            border: none;
+            background: url("6.png") no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .v {
+            position: relative;
+            bottom: 0;
+            right: 0;
+        }
+
+        .next {
+            position: absolute;
+            bottom: 0;
+            right: 50;
+        }
+    </style>
 </head>
+<header>
+    <audio id="audioIntro" src="../Utils/Recordings/Joc4_adunare_scadere/Maimute.mp3"></audio>
+</header>
 <body style="background-color:#FFFFE0">
-  <div class="adunare">
-  <img src="6maimute.png" width="600" height="400" class="zebre">
-  <img src="plus.png" width="150" height="150" class="plus">
-  <img src="maimuta.png" width="250" height="250" class="zebra">
-  <img src="egal.png" width="150" height="150" class="egal">
-  <img src="question.png" width="150" height="250" class="intrebare">
+<div class="adunare">
+    <img src="6maimute.png" width="600" height="400" class="zebre">
+    <img src="plus.png" width="150" height="150" class="plus">
+    <img src="maimuta.png" width="250" height="250" class="zebra">
+    <img src="egal.png" width="150" height="150" class="egal">
+    <img src="question.png" width="150" height="250" class="intrebare">
 </div>
 
 <div class="raspuns">
-  <button id="b1" class="button5" onclick="rau1()"><img id="rau1" src="X.png" width="70" height="70"></button>
-  <button id="b2" class="button4" onclick="bun()"><img id="bun" class="v" src="V.png" width="70" height="70"></button>
-  <button id="b3" class="button6" onclick="rau2()"><img id="rau2" class="v" src="X.png" width="70" height="70"></button>
+    <button type="button" disabled id="b1" class="button5" onclick="rau1()"><img id="rau1" src="X.png" width="70" height="70"></button>
+    <button type="button" disabled id="b2" class="button4" onclick="bun()"><img id="bun" class="v" src="V.png" width="70" height="70"></button>
+    <button type="button" disabled id="b3" class="button6" onclick="rau2()"><img id="rau2" class="v" src="X.png" width="70" height="70"></button>
 </div>
 
-<a href="pag2.html"><img id="next" class="next" src="next.png" width="150" height="150"></a>
+<a href="../home.html"><img id="next" class="next" src="next.png" width="150" height="150"></a>
 
 <script>
-var b = document.getElementById("bun");
-b.style.display = "none";
-var r1=document.getElementById("rau1");
-r1.style.display = "none";
-var r2=document.getElementById("rau2");
-r2.style.display = "none";
-var next=document.getElementById("next");
-next.style.display = "none";
-var button2= document.getElementById("b1")
-var button3= document.getElementById("b3")
-function bun() {
-  b.style.display = '';
-  next.style.display='';
-  button2.disabled=true;
-  button3.disabled=true;
-}
-function rau1() {
-  r1.style.display = '';
-}
-function rau2() {
-  r2.style.display = '';
-}
+    var audioIntro = document.getElementById("audioIntro");
+    audioIntro.play();
+    var button1 = document.getElementById("b1");
+    var button2 = document.getElementById("b2")
+    var button3 = document.getElementById("b3")
+
+    setTimeout(() => {
+        button1.disabled = false;
+        button2.disabled = false;
+        button3.disabled = false;
+    }, 21000);
+
+    var b = document.getElementById("bun");
+    b.style.display = "none";
+    var r1 = document.getElementById("rau1");
+    r1.style.display = "none";
+    var r2 = document.getElementById("rau2");
+    r2.style.display = "none";
+    var next = document.getElementById("next");
+    next.style.display = "none";
+
+    var raspuns_corect = new Audio("../Utils/Recordings/Joc4_adunare_scadere/Raspuns corect.mp3");
+    var raspuns_gresit = new Audio("../Utils/Recordings/Raspuns gresit/rasp4.mp3")
+    function bun() {
+        localStorage.setItem("joc4", 1);
+        raspuns_corect.play();
+        button1.disabled = true;
+        button3.disabled = true;
+        b.style.display = '';
+        setTimeout(() => {
+            next.style.display = '';
+        }, 12000)
+    }
+
+    function rau1() {
+        raspuns_gresit.play();
+        r1.style.display = '';
+        button1.disabled = true;
+        button3.disabled = true;
+        setTimeout(() => {
+            button1.disabled = false;
+            button3.disabled = false;
+        }, 5000);
+    }
+
+    function rau2() {
+        raspuns_gresit.play();
+        r2.style.display = '';
+        button1.disabled = true;
+        button2.disabled = true;
+        setTimeout(() => {
+            button1.disabled = false;
+            button2.disabled = false;
+        }, 5000);
+    }
 
 </script>
 </body>
