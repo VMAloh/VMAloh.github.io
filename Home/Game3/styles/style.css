@@ -12,13 +12,6 @@ body {
   position: absolute;
 }
 
-header img {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  height: 80px;
-}
-
 .question {
   height: 500px;
   width: 650px;
@@ -38,16 +31,16 @@ header img {
   justify-content: space-between;
 }
 .question input {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   font-size: 45px;
   cursor: pointer;
   text-align: center;
 }
-.question.correctAnswear {
+.question.correctAnswer {
   border: 4px solid green;
 }
-.question.wrongAnswear {
+.question.wrongAnswer {
   border: 4px solid red;
 }
 .question .feedback {
@@ -70,6 +63,40 @@ header img {
 
 #fourthQuestion {
   background: url("../images/monkeys.png") no-repeat center top;
+}
+
+.finalModal {
+  display: none;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: calc((100vh - 600px) / 2);
+  left: calc((100vw - 600px) / 2);
+  border-radius: 20px;
+}
+.finalModal .medal {
+  display: none;
+}
+.finalModal .home {
+  position: absolute;
+  bottom: 30px;
+  left: 40%;
+  height: 100px;
+}
+.finalModal.success {
+  background: url("../images/animalsFinal.png") no-repeat center top;
+  background-color: green;
+}
+.finalModal.success .medal {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 120px;
+}
+.finalModal.fail {
+  background: url("../images/sadAnimalsFinal.png") no-repeat center top;
+  background-color: darkred;
 }
 
 /*# sourceMappingURL=style.css.map */

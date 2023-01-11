@@ -5,7 +5,7 @@ document.getElementById("game2").onclick = function () {
     location.href = "Game2/game2.html";
 };
 document.getElementById("game3").onclick = function () {
-    location.href = "Game3/";
+    location.href = "Game3/index.html";
 };
 document.getElementById("game4").onclick = function () {
     location.href = "Game4/game4.html";

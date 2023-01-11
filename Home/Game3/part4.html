@@ -8,16 +8,23 @@
 <body>
 
 <header>
-  <img src="images/playAudio.png" alt="Play Audio">
-<!--  <audio id="audioMouse" src="scripts/sound.mp3"></audio>-->
+    <audio id="audioMonkeys" src="../Utils/Recordings/Joc1_numarare_animale/maimute.mp3">></audio>
 </header>
 
 <div class=question id="fourthQuestion">
   <div class="container">
-    <input class="answear" id="fourthAnswear" type="text" maxlength="1"/>
+    <input class="answer" id="fourthAnswer" type="text" maxlength="1"/>
     <img class="correctImage feedback" src="images/correct.png" alt="Correct image">
     <img class="wrongImage feedback" src="images/wrong.png" alt="Wrong image">
+    <audio class="feedbackAudio" id="audioSuccess" src="../Utils/Recordings/Raspuns%20corect/rasp5.mp3"></audio>
+    <audio class="finalAudio" id="audioSuccessFinal" src="../Utils/Recordings/Joc1_numarare_animale/Joc_terminat_cu_success.mp3"></audio>
+    <audio class="feedbackAudio" id="audioFail" src="../Utils/Recordings/Raspuns%20gresit/rasp3.mp3"></audio>
+    <audio class="finalAudio" id="audioFailFinal" src="../Utils/Recordings/Joc1_numarare_animale/Joc_terminat_cu_insucces.mp3"></audio>
   </div>
+</div>
+<div class="finalModal">
+  <img class="medal" src="images/medal.png">
+  <img class="home" src="images/home.png">
 </div>
 <script src="scripts/script.js"></script>
 <script src="scripts/script4.js"></script>
