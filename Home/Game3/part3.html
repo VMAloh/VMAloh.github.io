@@ -8,15 +8,16 @@
 <body>
 
 <header>
-  <img src="images/playAudio.png" alt="Play Audio">
-<!--  <audio id="audioMouse" src="scripts/sound.mp3"></audio>-->
+  <audio id="audioBunnies" src="../Utils/Recordings/Joc1_numarare_animale/iepurasi.mp3">></audio>
 </header>
 
 <div class=question id="thirdQuestion">
   <div class="container">
-    <input class="answear" id="thirdAnswear" type="text" maxlength="1"/>
+    <input class="answer" id="thirdAnswer" type="text" maxlength="1"/>
     <img class="correctImage feedback" src="images/correct.png" alt="Correct image">
     <img class="wrongImage feedback" src="images/wrong.png" alt="Wrong image">
+    <audio class="feedbackAudio" id="audioSuccess" src="../Utils/Recordings/Raspuns%20corect/rasp1.mp3"></audio>
+    <audio class="feedbackAudio" id="audioFail" src="../Utils/Recordings/Raspuns%20gresit/rasp2.mp3"></audio>
   </div>
 </div>
 <script src="scripts/script.js"></script>
