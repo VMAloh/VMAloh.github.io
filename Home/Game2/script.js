@@ -1,16 +1,27 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
+const failPopup = document.getElementById('popup-fail')
+const successPopup = document.getElementById('popup-success')
+const audioInsuccess = document.getElementById('audioInsuccess')
+const audioSuccess = document.getElementById('audioSuccess')
+const audioMagar = document.getElementById('audioMagar')
+const audioPorcusor = document.getElementById('audioPorcusor')
+const audioTigru = document.getElementById('audioTigru')
+const audioCorrectAnswer = document.getElementById('audioCorrectAnswer')
+const audioWrongAnswer = document.getElementById('audioWrongAnswer')
+const answerButtos = document.getElementById('answer-buttons')
+let score = 0;
 const winnie = document.getElementById("winnie")
 startButton.addEventListener('click',startGame)
-nextButton.addEventListener('click',() =>{
-    currentQuestIndex++
-    setNextQuestion()
-})
+nextButton.addEventListener('click',nextQuestion)
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions = undefined, currentQuestIndex = undefined;
-
+function nextQuestion() {
+    currentQuestIndex++
+    setNextQuestion()
+}
 function startGame(){
 console.log('Started')
     startButton.classList.add('hide')
@@ -27,6 +38,14 @@ function setNextQuestion(){
 function selectAnswer(e){
     const  selectedButton = e.target
     const correct = selectedButton.dataset.correct
+    if (correct != undefined){
+        score += 1;
+        audioCorrectAnswer.play()
+    }
+    else{
+        audioWrongAnswer.play()
+    }
+    // answerButtos.children.prop("disabled",true);
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button =>{
         setStatusClass(button, button.dataset.correct)
@@ -35,8 +54,15 @@ function selectAnswer(e){
         nextButton.classList.remove('hide')
     }
     else{
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
+        // startButton.innerText = 'Restart'
+        // startButton.classList.remove('hide')
+        if (score < 3) {
+            failPopup.style.display = 'block'
+            audioInsuccess.play()
+        }
+        else {successPopup.style.display = 'block'
+            audioSuccess.play()}
+
     }
 
 }
@@ -58,7 +84,9 @@ function clearStatusClass(element){
 
 function showQuestion(question){
     resetState()
+    //answerButtos.children.prop("disabled",false);
     questionElement.innerText = question.question
+    question.audio.play()
     question.answears.forEach(answer => {
         const button = document.createElement('img')
         button.src = answer.text
@@ -80,6 +108,10 @@ function resetState(){
     }
 }
 
+function goToHome() {
+    let locationString = location.pathname;
+    location.href = locationString.replace("/Game2/game2.html", "/home.html");
+}
 const questions = [
     {
         question: 'In noroi se tavaleste,\n' +
@@ -91,7 +123,8 @@ const questions = [
             {text: 'pictures/bear.webp', correct: false},
             {text: 'pictures/tiger.jpg', correct: false},
             {text: 'pictures/donkey.jpg', correct: false}
-        ]
+        ],
+        audio: audioPorcusor
     },
     {
         question: 'Este-un animal sălbatic,\n'+
@@ -103,7 +136,8 @@ const questions = [
             {text: 'pictures/bear.webp', correct: false},
             {text: 'pictures/tiger.jpg', correct: true},
             {text: 'pictures/donkey.jpg', correct: false}
-        ]
+        ],
+        audio: audioTigru
     }
     ,
     {
@@ -116,6 +150,7 @@ const questions = [
             {text: 'pictures/bear.webp', correct: false},
             {text: 'pictures/tiger.jpg', correct: false},
             {text: 'pictures/donkey.jpg', correct: true}
-        ]
+        ],
+        audio: audioMagar
     }
 ]
