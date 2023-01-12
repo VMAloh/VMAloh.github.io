@@ -10,16 +10,22 @@ const audioPorcusor = document.getElementById('audioPorcusor')
 const audioTigru = document.getElementById('audioTigru')
 const audioCorrectAnswer = document.getElementById('audioCorrectAnswer')
 const audioWrongAnswer = document.getElementById('audioWrongAnswer')
+const home1 = document.getElementById('home1')
+const home2 = document.getElementById('home2')
 const answerButtos = document.getElementById('answer-buttons')
 let score = 0;
+let selected = 0;
 const winnie = document.getElementById("winnie")
 startButton.addEventListener('click',startGame)
 nextButton.addEventListener('click',nextQuestion)
+home1.addEventListener('click',goToHome)
+home2.addEventListener('click',goToHome)
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions = undefined, currentQuestIndex = undefined;
 function nextQuestion() {
     currentQuestIndex++
+    selected = 0
     setNextQuestion()
 }
 function startGame(){
@@ -35,36 +41,50 @@ console.log('Started')
 function setNextQuestion(){
     showQuestion(shuffledQuestions[currentQuestIndex])
 }
-function selectAnswer(e){
-    const  selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    if (correct != undefined){
-        score += 1;
-        audioCorrectAnswer.play()
-    }
-    else{
-        audioWrongAnswer.play()
-    }
-    // answerButtos.children.prop("disabled",true);
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button =>{
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (shuffledQuestions.length > currentQuestIndex + 1){
-        nextButton.classList.remove('hide')
-    }
-    else{
-        // startButton.innerText = 'Restart'
-        // startButton.classList.remove('hide')
-        if (score < 3) {
-            failPopup.style.display = 'block'
-            audioInsuccess.play()
+async function selectAnswer(e) {
+    if (selected === 0) {
+        selected = 1
+        const selectedButton = e.target
+        const correct = selectedButton.dataset.correct
+        let yay = 0
+        if (correct != undefined) {
+            score += 1;
+            yay = 1
+            audioCorrectAnswer.play()
+        } else {
+            yay = 0
+            audioWrongAnswer.play()
         }
-        else {successPopup.style.display = 'block'
-            audioSuccess.play()}
 
+        // answerButtos.children.prop("disabled",true);
+        setStatusClass(document.body, correct)
+        Array.from(answerButtonsElement.children).forEach(button => {
+            setStatusClass(button, button.dataset.correct)
+            button.removeEventListener("click", selectAnswer)
+        })
+        if (shuffledQuestions.length > currentQuestIndex + 1) {
+            nextButton.classList.remove('hide')
+        } else {
+            // startButton.innerText = 'Restart'
+            // startButton.classList.remove('hide')
+            if (yay === 1)
+                await new Promise(r => setTimeout(r, 6000));
+            else
+                await new Promise(r => setTimeout(r, 7000));
+            if (score < 3) {
+                audioCorrectAnswer.pause()
+                audioWrongAnswer.pause()
+                failPopup.style.display = 'block'
+                audioInsuccess.play()
+            } else {
+                audioCorrectAnswer.pause()
+                audioWrongAnswer.pause()
+                successPopup.style.display = 'block'
+                audioSuccess.play()
+            }
+
+        }
     }
-
 }
 
 function setStatusClass(element, correct){
@@ -100,6 +120,13 @@ function showQuestion(question){
     })
 }
 
+function blockAnswerButtons(){
+    var answers = document.getElementsByClassName('btn-answer');
+    var numAnswers = answers.length;
+    for (var i = 0; i < numAnswers; i++) {
+        answers[i].removeEventListener('click', selectAnswer, false);
+    }
+}
 function resetState(){
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
