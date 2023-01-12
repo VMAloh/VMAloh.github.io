@@ -62,6 +62,8 @@ body.wrong{
     padding: 5px 10px;
     color: black;
     outline: none;
+    height: 200px;
+    width: 200px;
 }
 
 .question{
