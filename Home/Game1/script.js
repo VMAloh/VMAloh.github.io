@@ -1,6 +1,5 @@
 console.clear();
 let clearSquares = false;
-
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -35,46 +34,51 @@ function drop(ev) {
 }
 
 function check() {
-  //let modal = document.getElementById("myModal");
-  //modal.style.display = "block";
-  var i = 1;
-  var correct = true;
-  var correctGlobal = true;
-  var numImages = 6;
+  const audioIntro = document.getElementById("audioIntroStory");
+  console.log(audioWrongAnswer.playing);
+  console.log(audioIntro);
+  if (audioIntro.ended) {
+    //let modal = document.getElementById("myModal");
+    //modal.style.display = "block";
+    var i = 1;
+    var correct = true;
+    var correctGlobal = true;
+    var numImages = 6;
 
-  while (i <= numImages) {
-    //node = document.getElementById("drag1" + i);
-    //correct = node.parentNode.id == "div2" + i;
-    node = document.getElementById("div2" + i);
-    if (node.children.length > 0) {
-      correct = node.children[0].id == "drag1" + i;
-      if (!correct) {
-        node.style.borderColor = "red";
-        correctGlobal = false;
+    while (i <= numImages) {
+      //node = document.getElementById("drag1" + i);
+      //correct = node.parentNode.id == "div2" + i;
+      node = document.getElementById("div2" + i);
+      if (node.children.length > 0) {
+        correct = node.children[0].id == "drag1" + i;
+        if (!correct) {
+          node.style.borderColor = "red";
+          correctGlobal = false;
+        } else {
+          node.style.borderColor = "#51108e";
+        }
       } else {
+        correctGlobal = false;
         node.style.borderColor = "#51108e";
       }
-    } else {
-      correctGlobal = false;
-      node.style.borderColor = "#51108e";
+
+      i++;
     }
 
-    i++;
-  }
+    clearSquares = false;
 
-  clearSquares = false;
-
-  if (correctGlobal) {
-    //alert("Perfect");
-    localStorage.setItem("joc1", 1);
-    let modal = document.getElementById("myModal");
-    modal.style.display = "block";
-    let audioCorrect = document.getElementById("audioCorrectAnswer");
-    audioCorrect.play();
-  } else {
-    //alert("Wrong");
-    let audioWrong = document.getElementById("audioWrongAnswer");
-    audioWrong.play();
+    if (correctGlobal) {
+      //alert("Perfect");
+      localStorage.setItem("joc1", 1);
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+      let audioCorrect = document.getElementById("audioCorrectAnswer");
+      audioCorrect.play();
+    } else {
+      //alert("Wrong");
+      let audioWrong = document.getElementById("audioWrongAnswer");
+      audioWrong.play();
+    }
   }
 }
 
@@ -89,6 +93,11 @@ function closeModal() {
 }
 
 function goToHome() {
-  let locationString = location.pathname;
-  location.href = locationString.replace("/Game1/index.html", "/home.html");
+  const audioCorrectAnswer = document.getElementById("audioCorrectAnswer");
+
+  console.log(audioCorrectAnswer);
+  if (audioCorrectAnswer.ended) {
+    let locationString = location.pathname;
+    location.href = locationString.replace("/Game1/index.html", "/home.html");
+  }
 }

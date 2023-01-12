@@ -43,6 +43,7 @@ img {
     position: absolute;
     z-index: 3;
     cursor: pointer;
+    margin-top: -12px;
 
 }
 
@@ -56,7 +57,7 @@ img {
 
 header img {
     position: absolute;
-    top: 2px;
+    top: -2px;
     right: 20px;
     height: 80px;
     width:80px;
@@ -120,4 +121,13 @@ header img {
     height:150px;
     display: block;
     margin: auto;
+  }
+
+  body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+
+  #audioIntroImg{
+    cursor: pointer;
   }
