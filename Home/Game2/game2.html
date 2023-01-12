@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <link href="styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script defer src="script.js"></script>
-    <title>Ghcitori</title>
+    <script defer src="script2.js"></script>
+    <title>Ghicitori</title>
 </head>
 <body >
-    <img src="pictures/speaker-logo.png" class="speaker" alt="speaker">
+<header>
+    <audio id="audioIntroStory" src="../Utils/Recordings/Joc2_ghicitori/Introducere.mp3" ></audio>
+    <audio id="audioInsuccess" src="../Utils/Recordings/Joc2_ghicitori/Joc_terminat_cu_insucces.mp3" ></audio>
+    <audio id="audioSuccess" src="../Utils/Recordings/Joc2_ghicitori/Joc_terminat_cu_succes.mp3" ></audio>
+    <audio id="audioMagar" src="../Utils/Recordings/Joc2_ghicitori/magarusul.mp3" ></audio>
+    <audio id="audioPorcusor" src="../Utils/Recordings/Joc2_ghicitori/porcusorul.mp3" ></audio>
+    <audio id="audioTigru" src="../Utils/Recordings/Joc2_ghicitori/tigrul.mp3" ></audio>
+    <audio id="audioCorrectAnswer" src="../Utils/Recordings/Joc2_ghicitori/rasp_corect_next.mp3" ></audio>
+    <audio id="audioWrongAnswer" src="../Utils/Recordings/Joc2_ghicitori/rasp_gresit_next.mp3" ></audio>
+</header>
     <div class="container">
-        <img src="pictures/winnie.png" id="winnie" alt="Winnie the pooh">
+        <img src="pictures/pooh_calling.gif" id="winnie" alt="Winnie the pooh">
        <div id="question-container" class="hide">
            <div id="question">Question</div>
            <div id="answer-buttons" class="btn-grid ">
@@ -20,13 +31,23 @@
            </div>
        </div>
         <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="start-btn btn hide">Next</button>
+            <img src="pictures/next-arrow.webp" id="start-btn" class="start-btn btn">
+            <img src="pictures/next-arrow.webp" id="next-btn" class="next-btn hide">
         </div>
 
     </div>
-<!--    <div id="sad-popup" class="popup ">-->
-<!--        <img src="pictures/sad-winnie.gif">-->
+<!--    <div class="popup-success">-->
+<!--        <img class="medal" src="pictures/">-->
+<!--        <img class="home" src="images/home.png">-->
 <!--    </div>-->
+    <div class="popup-fail" id = "popup-fail">
+<!--        <img class="medal" src="pictures/medalie.png">-->
+        <img class="home" onclick="javascript:goToHome()" src="pictures/home.png">
+    </div>
+    <div class="popup-success" id = "popup-success">
+        <img class="medal" src="pictures/medalie.png">
+        <img class="friends" src="pictures/happy-friends.png">
+        <img class="home" onclick="javascript:goToHome()" src="pictures/home.png">
+    </div>
 </body>
 </html>
