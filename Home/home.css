@@ -35,13 +35,16 @@ html{
     background-image: url("./Utils/images_menu/img_joc1.jpeg");
 }
 #game2{
-    background-image: url("./Utils/images_menu/img_joc2.jpeg");
+    background-image: url("./Utils/images_menu/img_joc2.png");
+    background-size: 350px 350px;
 }
 #game3{
     background-image: url("./Utils/images_menu/img_joc3.jpg");
+    background-size: 350px 350px;
 }
 #game4{
     background-image: url("./Utils/images_menu/img_joc4.jpg");
+    background-size: 350px 350px;
 }
 #mr_smurf {
     position:absolute;
