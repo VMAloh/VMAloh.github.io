@@ -13,7 +13,8 @@
 
 <body bgcolor="#F2F7A1">
 	<header>
-		<audio id="audioIntroStory" src="../Utils/Recordings/Joc3_scene_din_poveste/Introducere.mp3" autoplay></audio>
+		<audio onended="javascript:hideSmurf()" id="audioIntroStory"
+			src="../Utils/Recordings/Joc3_scene_din_poveste/Introducere.mp3" autoplay></audio>
 		<audio id="audioWrongAnswer" src="../Utils/Recordings/Raspuns gresit/rasp2.mp3"></audio>
 		<audio id="audioCorrectAnswer"
 			src="../Utils/Recordings/Joc3_scene_din_poveste/Joc_terminat_cu_succes.mp3"></audio>
@@ -83,6 +84,7 @@
 		</div>
 		<div class="buttonDiv">
 			<div class="vertical"></div>
+			<div class="vertical"><img src="images/mr_smurf.png" id="smurf"></div>
 			<button class="buttonCheck" onclick="javascript:check()"><img src="images/qmark.png"></button>
 		</div>
 		<div id="myModal" class="modal">
