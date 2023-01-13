@@ -101,3 +101,9 @@ function goToHome() {
     location.href = locationString.replace("/Game1/index.html", "/home.html");
   }
 }
+
+function hideSmurf() {
+  console.log("STEEERG");
+  let smurf = document.getElementById("smurf");
+  smurf.style.visibility = "hidden";
+}
