@@ -82,6 +82,33 @@
             bottom: 0;
             right: 50;
         }
+
+        .finalModal {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            top: calc((100vh - 600px) / 2);
+            left: calc((100vw - 600px) / 2);
+            border-radius: 20px;
+            background: url("animalsFinal.png") no-repeat center top;
+            background-color: green;
+        }
+
+        .medal {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            height: 120px;
+        }
+        .home {
+            position: absolute;
+            bottom: 30px;
+            left: 40%;
+            height: 100px;
+        }
+
+
     </style>
 </head>
 <header>
@@ -102,7 +129,10 @@
     <button type="button" disabled id="b3" class="button6" onclick="rau2()"><img id="rau2" class="v" src="X.png" width="70" height="70"></button>
 </div>
 
-<a href="../home.html"><img id="next" class="next" src="next.png" width="150" height="150"></a>
+<div hidden="hidden" class="finalModal" id="finalModal">
+    <img class="medal" src="medal.png">
+    <a href="../home.html"> <img class="home" id="home" src="home.png"></a>
+</div>
 
 <script>
     var audioIntro = document.getElementById("audioIntro");
@@ -123,20 +153,29 @@
     r1.style.display = "none";
     var r2 = document.getElementById("rau2");
     r2.style.display = "none";
-    var next = document.getElementById("next");
-    next.style.display = "none";
+    var link = document.getElementById('home');
+    link.style.display='none'
+    var finalModal= document.getElementById("finalModal")
 
-    var raspuns_corect = new Audio("../Utils/Recordings/Joc4_adunare_scadere/Raspuns corect.mp3");
+
+    var raspuns_corect_final = new Audio("../Utils/Recordings/Raspuns corect/rasp1.mp3");
     var raspuns_gresit = new Audio("../Utils/Recordings/Raspuns gresit/rasp4.mp3")
+    var audioFinal=new Audio("../Utils/Recordings/Joc4_adunare_scadere/Joc_terminat_cu_succes.mp3")
+
     function bun() {
         localStorage.setItem("joc4", 1);
-        raspuns_corect.play();
+        raspuns_corect_final.play();
         button1.disabled = true;
         button3.disabled = true;
         b.style.display = '';
+
         setTimeout(() => {
-            next.style.display = '';
-        }, 12000)
+            finalModal.style.display = 'block';
+            audioFinal.play();
+            setTimeout(() => {
+                link.style.display=''
+            }, 29000)
+        }, 4000)
     }
 
     function rau1() {

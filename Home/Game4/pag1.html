@@ -84,7 +84,8 @@
     </style>
 </head>
 <header>
-    <audio id="audioIntro" src="../Utils/Recordings/Joc4_adunare_scadere/Zebre.mp3"></audio>
+    <audio id="audioIntro" src="../Utils/Recordings/Joc4_adunare_scadere/Introducere.mp3"></audio>
+    <audio id="audioReguli" src="../Utils/Recordings/Joc4_adunare_scadere/Zebre.mp3"></audio>
 </header>
 
 <body style="background-color:#FFFFE0">
@@ -109,15 +110,19 @@
 <script>
     var audioIntro=document.getElementById("audioIntro");
     audioIntro.play();
+    var audioReguli=document.getElementById("audioReguli");
     var button1 = document.getElementById("b1");
     var button2 = document.getElementById("b2")
     var button3 = document.getElementById("b3")
 
     setTimeout(()=>{
-        button1.disabled = false;
-        button2.disabled = false;
-        button3.disabled = false;
-    },21000);
+        audioReguli.play()
+        setTimeout(()=>{
+            button1.disabled = false;
+            button2.disabled = false;
+            button3.disabled = false;
+        },21000);
+    },25000);
 
     var b = document.getElementById("bun");
     b.style.display = "none";
