@@ -81,6 +81,7 @@ async function selectAnswer(e) {
                 audioWrongAnswer.pause()
                 successPopup.style.display = 'block'
                 audioSuccess.play()
+                localStorage.setItem("joc2", "1");
             }
 
         }
