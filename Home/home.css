@@ -128,3 +128,9 @@ html{
     width:380px;
     height:420px;
   }
+
+  #exit-button{
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+  }
