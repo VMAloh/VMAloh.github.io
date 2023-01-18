@@ -26,6 +26,12 @@
       widht="300"
     />
     <img
+            id="exit-button"
+            src="./Utils/images_menu/exit.png"
+            height="100"
+            width="100"
+    >
+    <img
       src="./Utils/images_menu/medalie.png"
       id="medalie1"
       height="70"
@@ -220,6 +226,9 @@
           location.href = "Game4/pag1.html";
         }
       };
+      document.getElementById("exit-button").onclick = function () {
+        location.href = "https://www.google.com/";
+      }
       $(document).ready(() => {
         $("#reset").click(() => {
           if (current_playing_audio.paused) {
